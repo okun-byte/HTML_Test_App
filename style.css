@@ -3,96 +3,87 @@ body {
   margin: 0;
 }
 
-/* 画像ブロック（ヘッダー部分） */
-#mainimg {
-  width: 100%;
-  height: 500px;             
-  /* aspect-ratio: 16 / 4; */
+#slide_area{
   position: relative;
-  overflow: hidden;
-  background: #000;
- 
+  width: 1900px;
+  height: 640px;
 }
 
-/* 3枚の画像共通設定 */
-#mainimg .slide {
+.img{
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* 枠いっぱいにトリミングして表示 */
-  object-position: center;
-
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-  animation-delay: 1s;
+  object-fit: cover;
 }
 
-/* 1枚目 */
-.slide1 {
-  animation-name: slide1;
+.btn{
+  background-color: #007bff;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  cursor: pointer;
 }
 
-/* 2枚目 */
-.slide2 {
-  animation-name: slide2;
+#prev{
+  left: 10px;
 }
 
-/* 3枚目 */
-.slide3 {
-  animation-name: slide3;
+#next{
+  right: 10px;
+}
+
+#page{
+  position: absolute;
+  bottom: 10px;
+}
+
+#page {
+  position: absolute;
+  bottom: -16px;
+  right: 50%;
+  background: #333333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+
+  font-size: 20px;
 }
 
 
-/*CSSスライドショーアニメーション設定
----------------------------------------------------------------------------*/
-/* 1枚目：0%～33% 担当 */
-@keyframes slide1 {
-  0%   { left: 0%; }      /* 最初から見えている */
-  30%  { left: 0%; }      /* 30% まで中央に表示 */
-  33%  { left: -110%; }   /* 左に抜けていく */
-  100% { left: -110%; }   /* 残り時間は画面外 */
-}
-
-/* 2枚目：33%～66% 担当 */
-@keyframes slide2 {
-  0%   { left: 110%; }      /* ずっと待機 */
-  33%  { left: 110%; }
-  36%  { left: 0%; }        /* 入場 */
-  63%  { left: 0%; }        /* 表示 */
-  66%  { left: -110%; }     /* 退場 */
-  100% { left: -110%; }
-}
-
-/*3枚目*/
-@keyframes slide3 {
-  0%   { left: 110%; }      
-  66%  { left: 110%; }      
-  69%  { left: 0%; }        
-  96%  { left: 0%; }        
-  100% { left: -110%; }        
-}
-
-h2{
-    margin: 0;
-    background-color: antiquewhite;
+.title{
+  margin: 0;
+  padding: 15px 0;
+  text-align: center;
+  /* font-size: 40px; */
+  background-color: antiquewhite;
+  font-weight: bold;
+  color: blue;
 }
 
 .introduce{
     align-items: center;
-
 }
 
-.introduce-content ul{
+.introduce-content {
     padding-left: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    gap:20px;
 }
-.introduce-content li{
-    font-size: 20px;
+.introduce-content h3{
+    margin: 0;
+    text-align: center;
+    padding-bottom: 8px;
+    font-size: 30px;
     color:hotpink;
-    list-style: none;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .content{
@@ -104,6 +95,7 @@ h2{
 
 .introduce-content p{
     margin: 0 0 10px 0;
+    padding-bottom: 1.2px;
 }
 
 .last p {

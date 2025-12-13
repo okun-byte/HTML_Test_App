@@ -1,0 +1,111 @@
+/* 画面端の余白を消す */
+body {
+  margin: 0;
+}
+
+/* 画像ブロック（ヘッダー部分） */
+#mainimg {
+  width: 100%;
+  height: 500px;             
+  /* aspect-ratio: 16 / 4; */
+  position: relative;
+  overflow: hidden;
+  background: #000;
+ 
+}
+
+/* 3枚の画像共通設定 */
+#mainimg .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* 枠いっぱいにトリミングして表示 */
+  object-position: center;
+
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+
+/* 1枚目 */
+.slide1 {
+  animation-name: slide1;
+}
+
+/* 2枚目 */
+.slide2 {
+  animation-name: slide2;
+}
+
+/* 3枚目 */
+.slide3 {
+  animation-name: slide3;
+}
+
+
+/*CSSスライドショーアニメーション設定
+---------------------------------------------------------------------------*/
+/* 1枚目：0%～33% 担当 */
+@keyframes slide1 {
+  0%   { left: 0%; }      /* 最初から見えている */
+  30%  { left: 0%; }      /* 30% まで中央に表示 */
+  33%  { left: -110%; }   /* 左に抜けていく */
+  100% { left: -110%; }   /* 残り時間は画面外 */
+}
+
+/* 2枚目：33%～66% 担当 */
+@keyframes slide2 {
+  0%   { left: 110%; }      /* ずっと待機 */
+  33%  { left: 110%; }
+  36%  { left: 0%; }        /* 入場 */
+  63%  { left: 0%; }        /* 表示 */
+  66%  { left: -110%; }     /* 退場 */
+  100% { left: -110%; }
+}
+
+/*3枚目*/
+@keyframes slide3 {
+  0%   { left: 110%; }      
+  66%  { left: 110%; }      
+  69%  { left: 0%; }        
+  96%  { left: 0%; }        
+  100% { left: -110%; }        
+}
+
+h2{
+    margin: 0;
+    background-color: antiquewhite;
+}
+
+.introduce{
+    align-items: center;
+
+}
+
+.introduce-content ul{
+    padding-left: 10px;
+}
+.introduce-content li{
+    font-size: 20px;
+    color:hotpink;
+    list-style: none;
+}
+
+.content{
+    box-shadow:0 2px 8px gray ;
+    border-left: 6px solid #5cc3ff; 
+    padding: 10px;
+    margin: 30px;
+}
+
+.introduce-content p{
+    margin: 0 0 10px 0;
+}
+
+.last p {
+    font-size: 20px;
+}
